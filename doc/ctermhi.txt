@@ -1,0 +1,23 @@
+*ctermhi.txt* Highlighting of highlight commands
+
+                __                           __     __  ~
+         .----.|  |_ .-----..----..--------.|  |--.|__| ~
+         |  __||   _||  -__||   _||        ||     ||  | ~
+         |____||____||_____||__|  |__|__|__||__|__||__| ~
+
+Author:  Micah Elliott
+Repo:    https://github.com/MicahElliott/vim-cterm-highlight
+License: Same terms as Vim itself (see |license|)
+
+==============================================================================
+INTRODUCTION                                                      *ctermhi*
+
+This plugin simply highlights the `:hi` lines in a colorscheme file. It
+extends the standard Vim syntax
+
+This is similar to and inspired by Yuri Feldman’s
+[hexHighlight.vim](https://github.com/vim-scripts/hexHighlight.vim).
+
+Not even tested on colorschemes with `gui*` args.
+
+Copyright © Micah Elliott. vim:ft=help:

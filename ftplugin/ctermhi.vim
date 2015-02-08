@@ -1,1 +1,0 @@
-echom 'in ctermhi ftdetect'
