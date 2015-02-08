@@ -20,4 +20,15 @@ This is similar to and inspired by Yuri Feldman’s
 
 Not even tested on colorschemes with `gui*` args.
 
+Some support for `background=light` too.
+
+==============================================================================
+DETAILS                                                   *ctermhi-details*
+
+There is no way to have multiple syntax matches on a single element, so this
+simply classifies a whole line based on a couple attributes. `ctermbg` is
+mostly ignored. Many syntax rules are generated in a loop up to 256.
+Backgrounds could also be treated in a nested loop, but I suspect the
+explosion of rules would hurt.
+
 Copyright © Micah Elliott. vim:ft=help:
