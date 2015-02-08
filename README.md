@@ -1,4 +1,4 @@
-![ctermhi!](https://raw.githubusercontent.com/MicahElliott/vim-cterm-highlight/master/ctermhi.jpg)
+![ctermhi!](https://raw.githubusercontent.com/MicahElliott/vim-cterm-highlight/master/ctermhi.png)
 
 This plugin simply highlights the `:hi` lines in a colorscheme file. It
 extends the standard Vim syntax.
