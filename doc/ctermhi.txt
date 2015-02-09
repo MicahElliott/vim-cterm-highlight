@@ -18,9 +18,32 @@ extends the standard Vim syntax
 This is similar to and inspired by Yuri Feldman’s
 [hexHighlight.vim](https://github.com/vim-scripts/hexHighlight.vim).
 
-Not even tested on colorschemes with `gui*` args.
-
 Some support for `background=light` too.
+
+==============================================================================
+LIMITATIONS                                           *ctermhi-limitations*
+
+There’s no way to apply both the fg and the bg, so since fg is so much more
+common, it gets the honors. But bg still can have some treatment (and works
+for the whole line when it is the sole attribute): it’s
+probably best to put any instance of `ctermbg=nnn` at the end of the line,
+like:
+>
+    hi someGroup ctermfg=87 cterm=bold ctermbg=22
+
+Since most of the colors wanted are numeric, no treatment is even given for
+color names like "blue". Therefore, it’s recommended to use numbers for all
+colors.
+
+If you want to add multiple `cterm=` attributes, use alphabetic order. I.e.,
+bold, italic, underline. E.g.,
+>
+    hi someGroup cterm=bold,underline
+
+This plugin adds a few hundred hi rules, and seems to slow down scrolling a
+bit.
+
+Not even tested on colorschemes with `gui*` args.
 
 ==============================================================================
 DETAILS                                                   *ctermhi-details*

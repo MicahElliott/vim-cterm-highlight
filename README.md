@@ -1,3 +1,6 @@
+# ctermhi
+
+Notice the treatment of 256 colors, bold, italic, and underline.
 ![ctermhi!](https://raw.githubusercontent.com/MicahElliott/vim-cterm-highlight/master/ctermhi.png)
 
 This plugin simply highlights the `:hi` lines in a colorscheme file. It
@@ -14,4 +17,4 @@ If you use Vundle, add this line to `$MYVIMRC`:
 
 And run `:Bundle`.
 
-Copyright © Micah Elliott. vim:ft=help:
+Copyright © Micah Elliott.
