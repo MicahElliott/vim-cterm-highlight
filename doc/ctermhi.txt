@@ -13,7 +13,7 @@ License: Same terms as Vim itself (see |license|)
 INTRODUCTION                                                      *ctermhi*
 
 This plugin simply highlights the `:hi` lines in a colorscheme file. It
-extends the standard Vim syntax
+extends the standard Vim syntax via `after` syntax and colors.
 
 This is similar to and inspired by Yuri Feldman’s
 [hexHighlight.vim](https://github.com/vim-scripts/hexHighlight.vim).
@@ -25,9 +25,8 @@ LIMITATIONS                                           *ctermhi-limitations*
 
 There’s no way to apply both the fg and the bg, so since fg is so much more
 common, it gets the honors. But bg still can have some treatment (and works
-for the whole line when it is the sole attribute): it’s
-probably best to put any instance of `ctermbg=nnn` at the end of the line,
-like:
+for the whole line when it is the sole attribute): it’s probably best to put
+any instance of `ctermbg=nnn` at the end of the line, like:
 >
     hi someGroup ctermfg=87 cterm=bold ctermbg=22
 
@@ -40,10 +39,13 @@ bold, italic, underline. E.g.,
 >
     hi someGroup cterm=bold,underline
 
-This plugin adds a few hundred hi rules, and seems to slow down scrolling a
-bit.
+This plugin adds about a thousand hi rules, and seems to slow down scrolling a
+bit. You could speed it up by discarding some combo rules, like
+`italic,underline`:
+>
+    :let g:ctermhi_discard_rare = 1
 
-Not even tested on colorschemes with `gui*` args.
+This is not tested on colorschemes with `gui*` args.
 
 ==============================================================================
 DETAILS                                                   *ctermhi-details*

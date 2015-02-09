@@ -10,21 +10,18 @@ endwhile
 
 let i = 1
 while i < 256
-  "exec 'syn match cf'.i.' "ctermfg='.i.'"'
-
   exec 'syn match cf'.i.'  "^\s*hi .*ctermfg='.i.'"'
   exec 'syn match cfb'.i.' "^\s*hi .*ctermfg='.i.' .*bold"'
   exec 'syn match cfi'.i.' "^\s*hi .*ctermfg='.i.' .*italic"'
-  exec 'syn match cfu'.i.' "^\s*hi .*ctermfg='.i.' .*underline"'
-  exec 'syn match cfbi'.i.' "^\s*hi .*ctermfg='.i.' .*bold,italic"'
-  exec 'syn match cfbu'.i.' "^\s*hi .*ctermfg='.i.' .*bold,underline"'
-  exec 'syn match cfiu'.i.' "^\s*hi .*ctermfg='.i.' .*italic,underline"'
+  if !exists('g:ctermhi_discard_rare')
+    exec 'syn match cfu'.i.' "^\s*hi .*ctermfg='.i.' .*underline"'
+    exec 'syn match cfbi'.i.' "^\s*hi .*ctermfg='.i.' .*bold,italic"'
+    exec 'syn match cfbu'.i.' "^\s*hi .*ctermfg='.i.' .*bold,underline"'
+    exec 'syn match cfiu'.i.' "^\s*hi .*ctermfg='.i.' .*italic,underline"'
+  endif
   exec 'syn match cfn'.i.' "^\s*hi .*ctermfg='.i.' .*=none"'
-
   " Standalone bg
   exec 'syn match cbonly'.i.' "ctermbg='.i.'$"'
-
-  "exec 'syn match cb'.i.'  "^\s*hi .*ctermbg='.i.'"'
   let i += 1
 endwhile
 

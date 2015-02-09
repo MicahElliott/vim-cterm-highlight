@@ -15,10 +15,12 @@ while i < 256
   exec 'hi cb'.i.' ctermbg='.i
   exec 'hi cfb'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=bold'
   exec 'hi cfi'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=italic'
-  exec 'hi cfu'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=underline'
-  exec 'hi cfbi'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=bold,italic'
-  exec 'hi cfbu'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=bold,underline'
-  exec 'hi cfiu'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=italic,underline'
+  if !exists('g:ctermhi_discard_rare')
+    exec 'hi cfu'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=underline'
+    exec 'hi cfbi'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=bold,italic'
+    exec 'hi cfbu'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=bold,underline'
+    exec 'hi cfiu'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=italic,underline'
+  endif
   exec 'hi cfn'.i.' ctermfg='.i.' ctermbg='.bg.' cterm=none'
   exec 'hi cbonly'.i.' ctermbg='.i
   let i += 1
